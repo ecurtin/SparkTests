@@ -17,5 +17,5 @@ hdfs dfs -cat /tmp/blah.csv
 "$SPARK_HOME"/bin/spark-submit \
   --class "org.framebit.sparkpi.InputTest" \
   target/scala-2.11/SparkPi-assembly-0.1.0-SNAPSHOT.jar \
-  hdfs:///tmp/blah.csv
+  hdfs://hdfs:9000/tmp/blah.csv
 
