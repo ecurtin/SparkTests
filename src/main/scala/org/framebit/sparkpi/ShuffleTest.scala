@@ -7,6 +7,9 @@ import scala.util.Random
 
 object ShuffleTest {
   def main(args: Array[String]) {
+
+    val n = if(args.nonEmpty) args(0) else Int.MaxValue
+
     val spark = SparkSession.builder.appName("ShuffleTest").getOrCreate()
 
     val states = Seq(
@@ -22,7 +25,8 @@ object ShuffleTest {
       "Georgia",
       "Hawaii",
       "Idaho",
-      "Illinois Indiana",
+      "Illinois",
+      "Indiana",
       "Iowa",
       "Kansas",
       "Kentucky",
@@ -34,7 +38,8 @@ object ShuffleTest {
       "Minnesota",
       "Mississippi",
       "Missouri",
-      "Montana Nebraska",
+      "Montana",
+      "Nebraska",
       "Nevada",
       "New Hampshire",
       "New Jersey",
