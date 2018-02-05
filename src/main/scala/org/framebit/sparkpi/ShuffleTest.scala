@@ -8,7 +8,7 @@ import scala.util.Random
 object ShuffleTest {
   def main(args: Array[String]) {
 
-    val n = if(args.nonEmpty) args(0) else Int.MaxValue
+    val n = if(args.nonEmpty) args(0).toInt else Int.MaxValue
 
     val spark = SparkSession.builder.appName("ShuffleTest").getOrCreate()
 
@@ -66,7 +66,7 @@ object ShuffleTest {
     )
 
     val rand = new Random(System.currentTimeMillis())
-    val numbers: RDD[Int] = spark.sparkContext.parallelize(0 until Int.MaxValue)
+    val numbers: RDD[Int] = spark.sparkContext.parallelize(0 until n)
 
     val set: RDD[(String, Double)] = numbers.map(_ => {
         val state = states(rand.nextInt(states.length))
