@@ -78,7 +78,9 @@ object ShuffleTest {
 
     val count = shuffled.count()
 
-    println(s"Count is $count")
+    println("********************************")
+    println(s"* Count is $count *")
+    println("********************************")
 
     spark.stop()
   }
